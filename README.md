@@ -1,5 +1,4 @@
 #Await Each
-====
 
 Iterate async functions!
 
@@ -29,4 +28,10 @@ Mixin with underscore:
 
 ```javascript
 _.mixin({awaitEach});
+```
+
+### Install
+
+```shell
+npm install await-each --save
 ```
