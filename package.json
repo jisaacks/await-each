@@ -1,0 +1,32 @@
+{
+  "name": "await-each",
+  "version": "1.0.0",
+  "description": "Iterate a list and asynchronously wait for each callback to finish before processing next",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jisaacks/await-each.git"
+  },
+  "keywords": [
+    "each",
+    "forEach",
+    "async",
+    "await",
+    "es6",
+    "es2015",
+    "asynchronous",
+    "promise"
+  ],
+  "author": "JD Isaacks",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
+    "mocha": "^2.3.2",
+    "underscore": "^1.8.3"
+  }
+}
