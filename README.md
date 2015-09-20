@@ -35,3 +35,47 @@ _.mixin({awaitEach});
 ```shell
 npm install await-each --save
 ```
+
+### Why?
+
+How is this any different than:
+
+
+```javascript
+values.forEach(async function(item) {
+  await doSomething();
+});
+```
+
+In the code above, each callback will wait for it's own `await` to resolve before continuing, but that wont stop the next callback from starting.
+
+Consider this code:
+
+```javascript
+values.forEach(async function(item) {
+  console.log('A');
+  await doSomething();
+  console.log('B');
+});
+```
+
+Because each iteration does not wait for the previous the output would likely be something like:
+
+> A A A B B B
+
+Using `awaitEach`, each iteration waits for the prev to resolve before starting.
+
+So converting the above code to:
+
+```javascript
+awaitEach(values, async function(item) {
+  console.log('A');
+  await doSomething();
+  console.log('B');
+});
+```
+
+Will guarantee the output will be:
+
+> A B A B A B
+
