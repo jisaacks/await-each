@@ -10,7 +10,7 @@ awaitEach(values, async function(item) {
 });
 ```
 
-Will wait until each callback is complete before iterating to the next.
+Will wait until each callback is resolved before iterating to the next.
 
 No dependency on `async` functions!
 

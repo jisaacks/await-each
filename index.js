@@ -3,7 +3,7 @@
 // resolve before iterating the next item in the 
 // list.
 
-// This allows each cb to _complete_ before
+// This allows each cb to _resolve_ before
 // starting the next.
 
 export default function awaitEach(list, cb) {
