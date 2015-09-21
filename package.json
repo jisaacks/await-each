@@ -1,8 +1,8 @@
 {
   "name": "await-each",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Iterate a list and asynchronously wait for each callback to finish before processing next",
-  "main": "index.js",
+  "main": "dist/await-each.js",
   "scripts": {
     "test": "mocha --compilers js:babel/register"
   },
@@ -26,6 +26,8 @@
     "babel": "^5.8.23",
     "chai": "^3.2.0",
     "chai-as-promised": "^5.1.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
     "mocha": "^2.3.2",
     "underscore": "^1.8.3"
   }

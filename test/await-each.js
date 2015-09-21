@@ -2,7 +2,7 @@ import {expect, default as chai} from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import _ from 'underscore';
 import * as mock from './helpers.js';
-import awaitEach from '../index.js';
+import awaitEach from '../dist/await-each.js';
 
 chai.use(chaiAsPromised);
 
