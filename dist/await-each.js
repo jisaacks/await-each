@@ -6,12 +6,12 @@
 // This allows each cb to _resolve_ before
 // starting the next.
 
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
-exports["default"] = awaitEach;
+exports['default'] = awaitEach;
 
 function awaitEach(list, cb) {
 
@@ -35,11 +35,11 @@ function awaitEach(list, cb) {
         var item = list.shift();
         var ret = cb(item);
 
-        if (!(ret instanceof Promise)) {
+        if (!('then' in Object(ret))) {
           ret = Promise.resolve(ret);
         }
 
-        ret.then(doNext)["catch"](fail);
+        ret.then(doNext, fail);
       } else {
         done(resp);
       }
@@ -49,4 +49,4 @@ function awaitEach(list, cb) {
   });
 }
 
-module.exports = exports["default"];
+module.exports = exports['default'];

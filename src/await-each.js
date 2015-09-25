@@ -28,11 +28,11 @@ export default function awaitEach(list, cb) {
         let item = list.shift();
         let ret = cb(item);
         
-        if (!(ret instanceof Promise)) {
+        if (!('then' in Object(ret))) {
           ret = Promise.resolve(ret);
         }
         
-        ret.then(doNext).catch(fail);
+        ret.then(doNext, fail);
       
       } else {
         done(resp);
